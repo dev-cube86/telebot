@@ -1,22 +1,20 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
 	"fmt"
-	"os"
-	"log"
-	"time"
 	"github.com/spf13/cobra"
 	telebot "gopkg.in/telebot.v3"
+	"log"
+	"os"
+	"time"
 )
 
 var (
 	TeleToken = os.Getenv("TELE_TOKEN")
 )
-	
 
 // telebotCmd represents the telebot command
 var telebotCmd = &cobra.Command{
@@ -41,7 +39,7 @@ to quickly create a Cobra application.`,
 			return
 		}
 		kbot.Handle(telebot.OnText, func(m telebot.Context) error {
-			log.Print(m.Message(),Payload, m.Text())
+			log.Print(m.Message().Payload, m.Text())
 			return err
 		})
 
