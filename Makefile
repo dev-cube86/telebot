@@ -29,4 +29,4 @@ image:
 push:
 	docker push ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETOS1}-${TARGETARCH1}
 clean:
-	docker rmi ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETARCH}
+	docker rmi ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETOS1}-${TARGETARCH1}
