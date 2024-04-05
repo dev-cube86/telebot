@@ -19,11 +19,11 @@ test:
 get:
 	go get
 linux: format get
-	$(call build,linux,386,)
+	$(call build,${TARGETOS1},${TARGETARCH1},)
 windows: format get
-	$(call build,windows,386,.exe)
+	$(call build,${TARGETOS2},${TARGETARCH2},.exe)
 ios: format get
-	$(call build,ios,arm64,)
+	$(call build,${TARGETOS3},${TARGETARCH3},)
 image: 
 	docker build -t ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETOS1}-${TARGETARCH1} --build-arg TARGETOS=${TARGETOS1} .
 push:
