@@ -13,7 +13,7 @@ jobs:
             fetch-depth: 0
         # - run: echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
         - name: Run test
-          uses: make test
+          run: make test
   # cd:
   #     needs: ci
   #     runs-on: ubuntu-latest     
