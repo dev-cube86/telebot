@@ -14,9 +14,6 @@ jobs:
         # - run: echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
         - name: Run test
           uses: make test
-        - run: |
-          git config user.name github-actions
-            git config user.email github-actions@github.com
   # cd:
   #     needs: ci
   #     runs-on: ubuntu-latest     
