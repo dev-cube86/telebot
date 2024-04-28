@@ -6,7 +6,8 @@ replicaCount: 1
 
 image:
   repository: ddehtiar1986
-  tag: v2.0.0-434b235-linux
+  tag: v2.0.0-434b235
+  os: linux
   arch: amd64
   
 secret:
