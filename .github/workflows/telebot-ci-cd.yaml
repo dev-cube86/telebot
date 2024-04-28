@@ -23,7 +23,7 @@ jobs:
           env:
             APP_NAME: "telebot"
             REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
-            VERSION: ${{ $GITHUB_ENV }}
+            # VERSION: ${{ GITHUB_ENV }}
           run: make image push     
   # cd:
   #     needs: ci
