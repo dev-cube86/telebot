@@ -22,7 +22,7 @@ jobs:
         - name: Build&Push
           env:
             APP_NAME: "helm-telebot"
-            REGISTRY: "gcr.io/devops-training-419011"
+            REGISTRY: "ghcr.io/devops-training-419011"
           run: make image push     
   cd:
       needs: ci
