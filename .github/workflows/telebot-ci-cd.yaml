@@ -23,7 +23,7 @@ jobs:
         - name: Build&Push
           env:
             APP_NAME: "telebot"
-            REGISTRY: "ghcr.io/devops-training"
+            REGISTRY: "ghcr.io/dev-cube86"
           run: make image push     
   cd:
       needs: ci
