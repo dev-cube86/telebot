@@ -18,11 +18,11 @@ jobs:
           uses: docker/login-action@v3
           with:
             registry: "ghcr.io"
-            username: ${{ org.devops }}
+            username: ${{ github.actor }}
             password: ${{ secrets.GITHUB_TOKEN }}
         - name: Build&Push
           env:
-            APP_NAME: "helm-telebot"
+            APP_NAME: "telebot"
             REGISTRY: "ghcr.io/devops-training"
           run: make image push     
   cd:
