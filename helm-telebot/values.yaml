@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   registry: ghcr.io
-  repository: devops-training-419011/telebot
+  repository: devops-training/telebot
   tag: v.1.0.1-71452a8
   os: linux
   arch: amd64
