@@ -22,7 +22,7 @@ jobs:
         - name: Build&Push
           env:
             APP_NAME: "helm-telebot"
-            REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+            REGISTRY: "gcr.io/devops-training-419011"
           run: make image push     
   cd:
       needs: ci
