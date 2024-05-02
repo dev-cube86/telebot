@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   registry: ghcr.io
   repository: dev-cube86/telebot
-  tag: v.1.0.1-a3a86aa
+  tag: v.1.0.1-bb11167
   os: linux
   arch: amd64
 secret:
