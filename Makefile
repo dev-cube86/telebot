@@ -1,5 +1,6 @@
-# VERSION=$(shell git describe --tags --abbrev=0 main)-$(shell git rev-parse --short HEAD)
+VERSION=$(shell git describe --tags --abbrev=0 main)-$(shell git rev-parse --short HEAD)
 # REGISTRY=gcr.io/devops-training-419011
+REGISTRY=ghcr.io/dev-cube86
 APP_NAME=$(shell basename $(shell git remote get-url origin))
 TARGETOS1=linux
 TARGETOS2=windows
@@ -18,15 +19,17 @@ test:
 	go test -v
 get:
 	go get
-linux: format get
-	$(call build,${TARGETOS1},${TARGETARCH1},)
-windows: format get
-	$(call build,${TARGETOS2},${TARGETARCH2},.exe)
-ios: format get
-	$(call build,${TARGETOS3},${TARGETARCH3},)
+build:
+	$(call build,${OS},${ARCH},)
+# linux: format get
+# 	$(call build,${TARGETOS1},${TARGETARCH1},)
+# windows: format get
+# 	$(call build,${TARGETOS2},${TARGETARCH2},.exe)
+# ios: format get
+# 	$(call build,${TARGETOS3},${TARGETARCH3},)
 image: 
-	docker build -t ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETOS1}-${TARGETARCH1} --build-arg TARGETOS=${TARGETOS1} .
+	docker build -t ${REGISTRY}/${APP_NAME}:${VERSION}-${OS}-${ARCH} --build-arg TARGETOS=${TARGETOS1} .
 push:
-	docker push ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETOS1}-${TARGETARCH1}
+	docker push ${REGISTRY}/${APP_NAME}:${VERSION}-${OS}-${ARCH}
 clean:
 	docker rmi ${REGISTRY}/${APP_NAME}:${VERSION}-${TARGETOS1}-${TARGETARCH1}
