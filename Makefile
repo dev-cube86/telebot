@@ -28,7 +28,7 @@ build:
 # ios: format get
 # 	$(call build,${TARGETOS3},${TARGETARCH3},)
 image: 
-	docker build -t ${REGISTRY}/${APP_NAME}:${VERSION}-${OS}-${ARCH} --build-arg TARGETOS=${TARGETOS1} .
+	docker build -t ${REGISTRY}/${APP_NAME}:${VERSION}-${OS}-${ARCH} --build-arg TARGETOS=${OS} .
 push:
 	docker push ${REGISTRY}/${APP_NAME}:${VERSION}-${OS}-${ARCH}
 clean:
