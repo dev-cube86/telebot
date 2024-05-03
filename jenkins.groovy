@@ -30,7 +30,6 @@ pipeline {
         stage('build') {
             steps {
                 echo "Building binary started"
-                echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)"
                 sh "make build"
             }
         }
