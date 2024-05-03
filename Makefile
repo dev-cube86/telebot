@@ -1,4 +1,4 @@
-VERSION=$(shell git describe --tags --abbrev=0 main)-$(shell git rev-parse --short HEAD)
+# VERSION=$(shell git describe --tags --abbrev=0 main)-$(shell git rev-parse --short HEAD)
 # REGISTRY=gcr.io/devops-training-419011
 REGISTRY=ghcr.io/dev-cube86
 APP_NAME=$(shell basename $(shell git remote get-url origin))
