@@ -30,7 +30,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "Building binary started"
-                sh "make build"
+                sh "make linux"
             }
         }
 
