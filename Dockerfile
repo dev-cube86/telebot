@@ -1,9 +1,9 @@
 FROM quay.io/projectquay/golang:1.22 as builder
-ARG TARGETOS
+ARG OS
 ARG GOARCH
 WORKDIR /go/src/app
 COPY . .
-RUN make $TARGETOS
+RUN make $OS
 
 FROM scratch
 WORKDIR /
