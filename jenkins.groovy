@@ -9,6 +9,7 @@ pipeline {
     environment {
         REPO = 'https://github.com/dev-cube86/telebot'
         BRANCH = 'main'
+        GITHUB_TOKEN = credentials('ghcr.io')
     }
 
     stages {
