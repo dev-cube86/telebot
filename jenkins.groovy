@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         REPO = 'https://github.com/dev-cube86/telebot'
-        BRANCH = 'develop'
+        BRANCH = 'main'
     }
 
     stages {
